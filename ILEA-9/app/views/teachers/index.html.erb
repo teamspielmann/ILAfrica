@@ -1,0 +1,41 @@
+<h1>Listing teachers</h1>
+
+<table>
+  <tr>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Subject</th>
+    <th>Comp work</th>
+    <th>Personal use</th>
+    <th>Professional use</th>
+    <th>Formal training</th>
+    <th>Informal training</th>
+    <th>Training needs</th>
+    <th>Other sources student</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teachers.each do |teacher| %>
+  <tr>
+    <td><%= teacher.gender %></td>
+    <td><%= teacher.age %></td>
+    <td><%= teacher.subject %></td>
+    <td><%= teacher.comp_work %></td>
+    <td><%= teacher.personal_use %></td>
+    <td><%= teacher.professional_use %></td>
+    <td><%= teacher.formal_training %></td>
+    <td><%= teacher.informal_training %></td>
+    <td><%= teacher.training_needs %></td>
+    <td><%= teacher.other_sources_student %></td>
+    <td><%= link_to 'Show', teacher %></td>
+    <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
+    <td><%= link_to 'Destroy', teacher, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Teacher', new_teacher_path %>

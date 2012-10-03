@@ -1,0 +1,32 @@
+<h1>Listing information</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Full name</th>
+    <th>School</th>
+    <th>Form</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @information.each do |information| %>
+  <tr>
+    <td><%= information.user_id %></td>
+    <td><%= information.full_name %></td>
+    <td><%= information.form %></td>
+    <td><%= information.age %></td>
+    <td><%= information.gender %></td>
+    <td><%= link_to 'Show', information %></td>
+    <td><%= link_to 'Edit', edit_information_path(information) %></td>
+    <td><%= link_to 'Destroy', information, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Information', new_information_path %>

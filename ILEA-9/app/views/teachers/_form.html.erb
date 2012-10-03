@@ -1,0 +1,186 @@
+<head>
+	<style type="text/css">
+	<!--
+	.style1 {color: #0000FF}
+	.style2 {font-size: larger}
+	.style3 {font-size: medium}
+	.style4 {font-family: Arial, Helvetica, sans-serif}
+	-->
+	</style>
+	<script type="text/javascript">
+
+	function toggle_text(shown, hidden) {
+	       var e = document.getElementById(shown);
+	       var f = document.getElementById(hidden);
+	    if(e.style.display == 'inline') {
+	                  e.style.display = 'none';
+	                  f.style.display = 'inline';
+	      }
+	      else {
+	                  e.style.display = 'inline';
+	                  f.style.display = 'none';
+	      }
+	}
+	</script>
+</head>
+
+<div  id="shown_first" style="display:inline">
+	<p>&nbsp;</p>
+		
+	<p><h2>Welcome to Information Literacy Africa.</h2></p> 
+
+	<p>This website was designed by Chris Spielmann, a Masters student in the Department of Education at Hong Kong University, as a tool to measure a High School student’s Information Literacy skills.</p> 
+
+<p>	By completing the tasks on this website you are participating in a research study conducted by Chris for his MSc(ITE) dissertation. The purpose of this study is to investigate to what extent Kenyan High School Teachers are equipped to teach information literacy.
+</p>
+<p>	You will be asked to complete a brief questionnaire about the access you have to computers and training. This should take approximately 15 minutes to complete.
+	</p>
+<p>Your students will be completing 5 tasks that measure their Information Literacy and will then also complete a brief questionnaire. </p>
+
+<p>	The results of the students' Information Literacy assessment will be sent to the school within 3 weeks of the final school completing the assessment. These will show the information literacy levels of each of the students and how they compare to the average scores of the sample collected. A soft copy of the Dissertation will also be made available to the school upon completion.
+</p>
+<p>	By pressing accept, you indicate that you have read the above information and that you agree to participating in this study. If you have any questions before taking the study please send them to ilafrica@yahoo.com  
+</p>
+<p>	If you do not wish to participate in this study please navigate away from this page.
+</p>      
+	
+	<a style="cursor:pointer" onclick="toggle_text('shown_first', 'hidden_first')" class="question2" >
+	     	<p>&nbsp;
+			</p>	
+			 <p align="right"> <button>Accept</button> </p>
+	      </a>
+		
+	</div>
+
+<div id="hidden_first" style="display:none">
+
+
+<%= form_for(@teacher) do |f| %>
+  <% if @teacher.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@teacher.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+
+      <ul>
+      <% @teacher.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<p class="task"> Teacher Questionnaire </p> 
+<table cellpadding="10">
+	<tr>
+		<td>
+			<b>Select your school</b>
+		</td>
+		<td>			
+    <%= f.select :school, Teacher::SCHOOL, prompt: "School" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			
+			<b>What is your gender? </b>
+		</td>
+		<td>
+ <div class="field">
+     <%= f.select :gender, Teacher::GENDER, prompt: "Gender" %>
+  </div>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+		<b>	What is your age?</b>
+			
+		</td>
+		<td>			
+    <%= f.select :age, Teacher::AGE, prompt: "Age" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			<b>What is the main subject area that you teach? </b>
+		</td>
+		<td>			
+    <%= f.select :subject, Teacher::SUBJECT, prompt: "Subject" %>
+		</td>
+	</tr>
+	
+	<tr>
+		<td valign="top">
+			<b>Do you have a computer at work?</b>
+		</td>
+		<td>			
+    <%= f.radio_button :comp_work, "Desktop"%> <%=f.label :Yes_a_desktop_computer%> </br>
+	<%= f.radio_button :comp_work, "Laptop"%> <%=f.label :Yes_a_laptop_computer%> </br>
+	<%= f.radio_button :comp_work, "Both"%> <%=f.label :Yes_both_of_them%> </br>
+	<%= f.radio_button :comp_work, "No"%> <%=f.label :No%> </br>
+		</td>
+	</tr>
+	
+	<tr>
+		<td valign="top">
+			<b>What best describes your level of technology expertise in personal use?</b>
+		</td>
+		<td>			
+    <%= f.radio_button :personal_use, "v uncomfortable"%> <%=f.label :I_am_very_uncomfortable_using_technology_for_personal_use%> </br>
+	<%= f.radio_button :personal_use, "uncomfortable"%> <%=f.label :I_am_fairly_uncomfortable_using_technology_for_personal_use%> </br>
+	<%= f.radio_button :personal_use, "comfortable"%> <%=f.label :I_am_fairly_comfortable_using_technology_for_personal_use%> </br>
+	<%= f.radio_button :personal_use, "v comfortable"%> <%=f.label :I_am_very_comfortable_using_technology_for_personal_use%> </br>
+		</td>
+	</tr>	
+  
+	<tr>
+		<td valign="top">
+			<b>What best describes your level of technology expertise in the classroom?</b>
+		</td>
+		<td>			
+    <%= f.radio_button :professional_use, "v uncomfortable"%> <%=f.label :I_am_very_uncomfortable_using_technology_in_my_classroom%> </br>
+	<%= f.radio_button :professional_use, "uncomfortable"%> <%=f.label :I_am_fairly_uncomfortable_using_technology_in_my_classroom%> </br>
+	<%= f.radio_button :professional_use, "comfortable"%> <%=f.label :I_am_fairly_comfortable_using_technology_in_my_classroom%> </br>
+	<%= f.radio_button :professional_use, "v comfortable"%> <%=f.label :I_am_very_comfortable_using_technology_in_my_classroom%> </br>
+		</td>
+	</tr>
+	
+	<tr>
+		<td colspan='2'>
+			<b>What formal ICT training have you received?</b></br>
+			<%= f.text_area :formal_training,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+		
+	<tr>
+		<td colspan='2'>
+			<b>What informal ICT training have you received?</b></br>
+			<%= f.text_area :informal_training,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan='2'>
+			<b>What are your perceived training needs?</b></br>
+			<%= f.text_area :training_needs,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan='2'>
+			<b>Apart from in your lessons, where else do the students that you teach gain ICT skills?</b></br>
+			<%= f.text_area :other_sources_student,:rows => 4, :cols => 130 %>
+		</td>
+	</tr>
+
+	<tr>
+		<td colspan='2' align="right">
+			<div class="actions">
+		    <%= f.submit "Submit Teacher Questionnaire"%>
+		  </div>
+		</td>
+	</tr>
+
+<% end %>
+</div>

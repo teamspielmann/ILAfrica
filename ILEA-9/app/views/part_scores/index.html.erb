@@ -1,0 +1,35 @@
+<h1>Listing part_scores</h1>
+
+<table>
+  <tr>
+    <th>Vehicle type</th>
+    <th>Database choice</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Time taken</th>
+    <th>Searches count</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @part_scores.each do |part_score| %>
+  <tr>
+    <td><%= part_score.vehicle_type %></td>
+    <td><%= part_score.database_choice %></td>
+    <td><%= part_score.start_time %></td>
+    <td><%= part_score.end_time %></td>
+    <td><%= part_score.time_taken %></td>
+    <td><%= part_score.searches_count %></td>
+    <td><%= part_score.score %></td>
+    <td><%= link_to 'Show', part_score %></td>
+    <td><%= link_to 'Edit', edit_part_score_path(part_score) %></td>
+    <td><%= link_to 'Destroy', part_score, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Part score', new_part_score_path %>

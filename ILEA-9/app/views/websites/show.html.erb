@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Most reliable:</b>
+  <%= @website.most_reliable %>
+</p>
+
+<p>
+  <b>Most reason:</b>
+  <%= @website.most_reason %>
+</p>
+
+<p>
+  <b>Least reliable:</b>
+  <%= @website.least_reliable %>
+</p>
+
+<p>
+  <b>Least reason:</b>
+  <%= @website.least_reason %>
+</p>
+
+
+<%= link_to 'Edit', edit_website_path(@website) %> |
+<%= link_to 'Back', websites_path %>

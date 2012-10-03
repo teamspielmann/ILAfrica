@@ -1,0 +1,25 @@
+<h1>Listing present_titles</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @present_titles.each do |present_title| %>
+  <tr>
+    <td><%= present_title.title %></td>
+    <td><%= present_title.score %></td>
+    <td><%= link_to 'Show', present_title %></td>
+    <td><%= link_to 'Edit', edit_present_title_path(present_title) %></td>
+    <td><%= link_to 'Destroy', present_title, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Present title', new_present_title_path %>

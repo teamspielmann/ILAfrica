@@ -1,0 +1,57 @@
+<h1>Listing feedbacks</h1>
+
+<table>
+  <tr>
+    <th>Define 1</th>
+    <th>Define 2</th>
+    <th>Define 3</th>
+    <th>Define t</th>
+    <th>Access 1</th>
+    <th>Access 2</th>
+    <th>Access 3</th>
+    <th>Access 4</th>
+    <th>Access t</th>
+    <th>Evaluate 1</th>
+    <th>Evaluate 2</th>
+    <th>Evaluate 3</th>
+    <th>Evaluate 4</th>
+    <th>Evaluate t</th>
+    <th>Use 1</th>
+    <th>Use 2</th>
+    <th>Use t</th>
+    <th>Il total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @feedbacks.each do |feedback| %>
+  <tr>
+    <td><%= feedback.define_1 %></td>
+    <td><%= feedback.define_2 %></td>
+    <td><%= feedback.define_3 %></td>
+    <td><%= feedback.define_t %></td>
+    <td><%= feedback.access_1 %></td>
+    <td><%= feedback.access_2 %></td>
+    <td><%= feedback.access_3 %></td>
+    <td><%= feedback.access_4 %></td>
+    <td><%= feedback.access_t %></td>
+    <td><%= feedback.evaluate_1 %></td>
+    <td><%= feedback.evaluate_2 %></td>
+    <td><%= feedback.evaluate_3 %></td>
+    <td><%= feedback.evaluate_4 %></td>
+    <td><%= feedback.evaluate_t %></td>
+    <td><%= feedback.use_1 %></td>
+    <td><%= feedback.use_2 %></td>
+    <td><%= feedback.use_t %></td>
+    <td><%= feedback.il_total %></td>
+    <td><%= link_to 'Show', feedback %></td>
+    <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
+    <td><%= link_to 'Destroy', feedback, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Feedback', new_feedback_path %>

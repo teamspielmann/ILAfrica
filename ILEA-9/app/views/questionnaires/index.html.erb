@@ -1,0 +1,35 @@
+<h1>Listing questionnaires</h1>
+
+<table>
+  <tr>
+    <th>Ict c teacher</th>
+    <th>Ict no teacher</th>
+    <th>Internet school</th>
+    <th>Internet outside</th>
+    <th>Sharing computer</th>
+    <th>Ict opportunities school</th>
+    <th>Ict opportunities out</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @questionnaires.each do |questionnaire| %>
+  <tr>
+    <td><%= questionnaire.ict_c_teacher %></td>
+    <td><%= questionnaire.ict_no_teacher %></td>
+    <td><%= questionnaire.internet_school %></td>
+    <td><%= questionnaire.internet_outside %></td>
+    <td><%= questionnaire.sharing_computer %></td>
+    <td><%= questionnaire.ict_opportunities_school %></td>
+    <td><%= questionnaire.ict_opportunities_out %></td>
+    <td><%= link_to 'Show', questionnaire %></td>
+    <td><%= link_to 'Edit', edit_questionnaire_path(questionnaire) %></td>
+    <td><%= link_to 'Destroy', questionnaire, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Questionnaire', new_questionnaire_path %>

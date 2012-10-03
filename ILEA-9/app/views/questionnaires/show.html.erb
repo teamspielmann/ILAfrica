@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ict c teacher:</b>
+  <%= @questionnaire.ict_c_teacher %>
+</p>
+
+<p>
+  <b>Ict no teacher:</b>
+  <%= @questionnaire.ict_no_teacher %>
+</p>
+
+<p>
+  <b>Internet school:</b>
+  <%= @questionnaire.internet_school %>
+</p>
+
+<p>
+  <b>Internet outside:</b>
+  <%= @questionnaire.internet_outside %>
+</p>
+
+<p>
+  <b>Sharing computer:</b>
+  <%= @questionnaire.sharing_computer %>
+</p>
+
+<p>
+  <b>Ict opportunities school:</b>
+  <%= @questionnaire.ict_opportunities_school %>
+</p>
+
+<p>
+  <b>Ict opportunities out:</b>
+  <%= @questionnaire.ict_opportunities_out %>
+</p>
+
+
+<%= link_to 'Edit', edit_questionnaire_path(@questionnaire) %> |
+<%= link_to 'Back', questionnaires_path %>

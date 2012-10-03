@@ -1,0 +1,8 @@
+<%= image_tag("Taskbar4.png" )%>
+<h2>Task 4</h2> 
+<%= form_for([@user, @part_score]) do |f|%>
+<%= render "#{@part_score.current_step}_step", :f => f %>
+
+
+
+<%end%>

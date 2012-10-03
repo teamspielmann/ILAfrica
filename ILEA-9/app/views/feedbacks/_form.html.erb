@@ -1,0 +1,96 @@
+<%= form_for(@feedback) do |f| %>
+  <% if @feedback.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@feedback.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+      <ul>
+      <% @feedback.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+
+	
+  <div class="field">
+    <%= f.label :define_1 %><br />
+    <%= f.text_field :define_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :define_2 %><br />
+    <%= f.text_field :define_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :define_3 %><br />
+    <%= f.text_field :define_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :define_t %><br />
+    <%= f.text_field :define_t %>
+  </div>
+  <div class="field">
+    <%= f.label :access_1 %><br />
+    <%= f.text_field :access_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :access_2 %><br />
+    <%= f.text_field :access_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :access_3 %><br />
+    <%= f.text_field :access_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :access_4 %><br />
+    <%= f.text_field :access_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :access_t %><br />
+    <%= f.text_field :access_t %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluate_1 %><br />
+    <%= f.text_field :evaluate_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluate_2 %><br />
+    <%= f.text_field :evaluate_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluate_3 %><br />
+    <%= f.text_field :evaluate_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluate_4 %><br />
+    <%= f.text_field :evaluate_4 %>
+  </div>
+  <div class="field">
+    <%= f.label :evaluate_t %><br />
+    <%= f.text_field :evaluate_t %>
+  </div>
+  <div class="field">
+    <%= f.label :use_1 %><br />
+    <%= f.text_field :use_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :use_2 %><br />
+    <%= f.text_field :use_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :use_t %><br />
+    <%= f.text_field :use_t %>
+  </div>
+  <div class="field">
+    <%= f.label :il_total %><br />
+    <%= f.text_field :il_total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
